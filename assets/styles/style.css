@@ -1,3 +1,4 @@
+
 .logo {
   width: 11rem;
   height: 3rem;
@@ -9,13 +10,27 @@
   background-color: #d30562;
   color: white;
 }
-
+.carouselItem{
+  text-decoration: none;
+  color: black;
+}
+.carouselItem:hover{
+  text-decoration: none;
+  color: #d30562;
+  transform: 3;
+}
 .amazeCheck {
   background-color: white;
 }
 .amazeCheck:checked {
   background-color: #dc0464;
   border-color: white;
+}
+.amazeIcons{
+  color: gray;
+}
+.amazeIcons :hover{
+  color: #d30562;
 }
 @media screen and (max-width: 480px) {
   .logo {
