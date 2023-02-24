@@ -1,0 +1,38 @@
+.logo {
+  width: 11rem;
+  height: 3rem;
+}
+.checks{
+    display: inline-flex;
+}
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 9rem;
+    height: 2rem;
+  }
+  .checks{
+    display: block;
+}
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+
+  background-size: 100%, 100%;
+
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 60px;
+  color: #dc0464;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 60px;
+  color: #dc0464;
+}
