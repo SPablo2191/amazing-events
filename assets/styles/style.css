@@ -2,17 +2,32 @@
   width: 11rem;
   height: 3rem;
 }
-.checks{
-    display: inline-flex;
+.checks {
+  display: inline-flex;
+}
+.amazeButton {
+  background-color: #d30562;
+  color: white;
+}
+
+.amazeCheck {
+  background-color: white;
+}
+.amazeCheck:checked {
+  background-color: #dc0464;
+  border-color: white;
 }
 @media screen and (max-width: 480px) {
   .logo {
     width: 9rem;
     height: 2rem;
   }
-  .checks{
-    display: block;
-}
+  .checks {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+    margin-bottom: 1rem;
+  }
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -24,15 +39,14 @@
   background-image: none;
 }
 
-.carousel-control-next-icon:after
-{
-  content: '>';
+.carousel-control-next-icon:after {
+  content: ">";
   font-size: 60px;
-  color: #dc0464;
+  color: grey;
 }
 
 .carousel-control-prev-icon:after {
-  content: '<';
+  content: "<";
   font-size: 60px;
-  color: #dc0464;
+  color: grey;
 }
