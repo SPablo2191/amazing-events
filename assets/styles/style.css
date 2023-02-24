@@ -6,6 +6,10 @@
 .checks {
   display: inline-flex;
 }
+.amazeImage{
+  width: 25rem;
+  height: 15rem;
+}
 .amazeButton {
   background-color: #d30562;
   color: white;
