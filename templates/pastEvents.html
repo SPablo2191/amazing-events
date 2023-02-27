@@ -15,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <title>Detail - Amazing Events</title>
+    <title>Past Events - Amazing Events</title>
   </head>
   <body>
     <header class="">
@@ -50,39 +50,71 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Past Events </a>
+                <a class="nav-link active" href="#"> Past Events </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Contact </a>
+                <a class="nav-link" href="./contactUs.html"> Contact </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Stats </a>
+                <a class="nav-link" href="./stats.html"> Stats </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    </header>
-    <main class="my-4 py-2 mx-2 rounded  bg-light shadow">
-        <div class="d-flex justify-content-center">
-            <div class="card mb-3" style="max-width: 840px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="../assets/imgs/Cinema.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
-                  </div>
-                  <div class="col-md-8 py-4">
-                    <div class="card-body">
-                      <h5 class="card-title">Cinema</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum consectetur, reprehenderit numquam blanditiis enim distinctio natus voluptatibus eaque incidunt nemo iure officiis adipisci architecto. Possimus facere quisquam distinctio repellat sit?
-                      </p>
-                      <p class="card-text"><small class="text-muted">informative text</small></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide py-3 mx-2 shadow rounded"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <a href="./contactUs.html" class="carouselItem">
+              <h3 class="text-center">Contact Us</h3>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="../index.html" class="carouselItem">
+              <h3 class="text-center">Home</h3>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="./upcomingEvents.html" class="carouselItem">
+              <h3 class="text-center">Upcoming Events</h3>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="./stats.html" class="carouselItem">
+              <h3 class="text-center">Stats</h3>
+            </a>
+          </div>
+          <div class="carousel-item active">
+            <a href="#" class="carouselItem">
+              <h3 class="text-center">Past Events</h3>
+            </a>
+          </div>
         </div>
-    </main>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+    <main class="my-4 py-2 mx-2 px-2 d-flex flex-column shadow"></main>
     <footer class="footer mt-auto py-3">
       <div
         class="d-flex gap-2 justify-content-center justify-content-lg-start mx-2"
