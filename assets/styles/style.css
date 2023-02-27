@@ -36,6 +36,31 @@
 .amazeIcons :hover{
   color: #d30562;
 }
+.amazeTable {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.amazeTable td, .amazeTable th {
+  text-align: center;
+  text-overflow: ellipsis;
+  /* border: 1px solid #ddd; */
+  border-radius: 2px;
+  padding: 8px;
+}
+
+.amazeTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.amazeTable tr:hover {background-color: #ddd;}
+
+.amazeTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #d30562;
+  color: white;
+}
 @media screen and (max-width: 480px) {
   .logo {
     width: 9rem;

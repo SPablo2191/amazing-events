@@ -15,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../assets/styles/style.css" />
-    <title>Contact Us - Amazing Events</title>
+    <title>Stats - Amazing Events</title>
   </head>
   <body>
     <header class="">
@@ -45,16 +45,18 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+                <a class="nav-link" href="./upcomingEvents.html"
+                  >Upcoming Events</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"> Past Events </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#"> Contact </a>
+                <a class="nav-link " href="./contactUs.html"> Contact </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./stats.html"> Stats </a>
+                <a class="nav-link active" href="#"> Stats </a>
               </li>
             </ul>
           </div>
@@ -102,38 +104,84 @@
         </button>
       </div>
     </header>
-    <main class="my-4 py-2 mx-2 rounded shadow bg-light">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Name:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Message:</label>
-          <textarea
-            class="form-control"
-            id="floatingTextarea"
-          ></textarea>
-        </div>
-
-        <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
+    <main class="my-4 py-2 mx-2 px-2 d-flex flex-column">
+      <table class="amazeTable mx-2">
+        <thead>
+          <tr>
+            <th colspan="3">Events Statistics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Events with the highest percentage of attendance</td>
+            <td>Events with the lowest percentage of attendance</td>
+            <td>Event with larger capacity</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="amazeTable mx-2 my-4">
+        <thead>
+          <tr>
+            <th colspan="3">Upcoming events Statistics by category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Categories</td>
+            <td>Revenues</td>
+            <td>Percentage of attendance</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="amazeTable mx-2 my-4">
+        <thead>
+          <tr>
+            <th colspan="3">Past events Statistic by category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Categories</td>
+            <td>Revenues</td>
+            <td>Percentage of attendance</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </main>
     <footer class="footer mt-auto py-3">
       <div
@@ -150,10 +198,5 @@
         </a>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
