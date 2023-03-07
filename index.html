@@ -18,8 +18,10 @@
     <title>Home - Amazing Events</title>
   </head>
   <body>
-    <header >
-      <nav class="navbar navbar-expand-lg navbar-light bg-light rounded m-2 shadow">
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light rounded m-2 shadow"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="./assets/imgs/logo.png" alt="logo" class="logo" />
@@ -46,10 +48,14 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./templates/pastEvents.html"> Past Events </a>
+                <a class="nav-link" href="./templates/pastEvents.html">
+                  Past Events
+                </a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link " href="./templates/contactUs.html"> Contact </a>
+              <li class="nav-item">
+                <a class="nav-link" href="./templates/contactUs.html">
+                  Contact
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./templates/stats.html"> Stats </a>
@@ -66,7 +72,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <a href="#" class="carouselItem">
-              <h3 class="text-center ">Home</h3>
+              <h3 class="text-center">Home</h3>
             </a>
           </div>
           <div class="carousel-item">
@@ -110,7 +116,7 @@
         </button>
       </div>
     </header>
-    <main class="my-4 py-2 mx-2  rounded shadow bg-light">
+    <main class="my-4 py-2 mx-2 rounded shadow bg-light">
       <div class="container-fluid my-2">
         <div class="row">
           <div class="col">
@@ -177,6 +183,30 @@
       </div>
       <div class="container-fluid my-4">
         <div class="d-flex justify-content-center flex-wrap text-center">
+          <div class="card m-2 shadow" style="width: 18rem">
+            <img
+              id="cardImage"
+              src="./assets/imgs/Cinema.jpg"
+              class="card-img-top"
+              alt="..."
+              height="150"
+            />
+            <div class="card-body">
+              <h5 class="card-title" id="cardTitle"></h5>
+              <p class="card-text" id="cardText">
+              </p>
+            </div>
+            <div class="card-footer border-0">
+              <div class="d-flex justify-content-between">
+                <p id="cardPrice"></p>
+                <a href="./templates/detail.html" class="btn amazeButton"
+                  >See more...</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="d-flex justify-content-center flex-wrap text-center">
           <div class="card m-2 shadow" style="width: 18rem">
             <img
               src="./assets/imgs/Cinema.jpg"
@@ -261,7 +291,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
     <footer class="footer mt-auto py-3">
@@ -284,5 +314,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
