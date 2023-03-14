@@ -172,11 +172,27 @@ function getData(){
       }
     ]
   };
+};
+function getCategories() {
+  let htmlCheckboxes = '';
+  categories.forEach(function(element){
+    htmlCheckboxes += `
+    <div class="form-check mx-2">
+    <input
+      class="form-check-input amazeCheck"
+      type="checkbox"
+      value=""
+      id="flexCheckDefault"
+    />
+    <label class="form-check-label text-center" for="flexCheckDefault">
+      ${element}
+    </label>
+  </div>
+    `;
+  });
+  const checks = document.getElementById('checks');
+  checks.innerHTML = htmlCheckboxes;
 }
-// for (let index = 0; index < data.events.length; index++) {
-//     let eventData = data.events[index];
-//     document.getElementById("cardImage").innerHTML = eventData.image;
-//     document.getElementById("cardTitle").innerHTML = eventData.name;
-//     document.getElementById("cardText").innerHTML = eventData.description;
-// }
-    
+
+const categories = ["Food Fair", "Museum", "Costume Party","Music Concert","Race","Book Exchange","Cinema"];
+getCategories();
