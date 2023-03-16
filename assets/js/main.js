@@ -199,7 +199,7 @@ function getCards(data) {
     htmlCode =
     htmlCode +
     `
-    <div class="card m-2 shadow" style="width: 18rem">
+    <div class="card m-2 shadow" style="width: 18rem" id="${element._id}">
     <img
       id="cardImage"
       src="${element.image}"
@@ -216,7 +216,7 @@ function getCards(data) {
     <div class="card-footer border-0">
       <div class="d-flex justify-content-between">
         <p id="cardPrice">$${element.price}</p>
-        <button href="./templates/detail.html" class="btn amazeButton" 
+        <button href="./templates/detail.html" class="btn amazeButton" onclick="setDetail(${element._id})"
           >See more...</button
         >
       </div>
@@ -228,4 +228,10 @@ const cards = document.getElementById('cards');
 cards.innerHTML = htmlCode;
 };
 const categories = ["Food Fair", "Museum", "Costume Party","Music Concert","Race","Book Exchange","Cinema"];
-getCategories();
+
+
+function setDetail(id) {
+  let event = getData().events.find(event => event._id == id);
+  localStorage.setItem("detail", JSON.stringify(event));
+  location.href = "/templates/detail.html";
+}

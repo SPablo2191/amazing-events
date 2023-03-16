@@ -31,3 +31,4 @@
 // const cards = document.getElementById('cards');
 // cards.innerHTML = htmlCode;
 getCards(getData().events);
+getCategories();
