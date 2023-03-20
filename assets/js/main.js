@@ -175,26 +175,30 @@ function getData(){
 };
 function getCategories() {
   let htmlCheckboxes = '';
+  let id = 0;
   categories.forEach(function(element){
     htmlCheckboxes += `
     <div class="form-check mx-2">
     <input
       class="form-check-input amazeCheck"
       type="checkbox"
-      value=""
-      id="flexCheckDefault"
+      value="${element}"
+      name="check${id}"
+      id="amazeChecks"
     />
     <label class="form-check-label text-center" for="flexCheckDefault">
       ${element}
     </label>
   </div>
     `;
+    id++;
   });
   const checks = document.getElementById('checks');
   checks.innerHTML = htmlCheckboxes;
 }
 function getCards(data) {
   let htmlCode = ``;
+  
   data.forEach(function(element){
     htmlCode =
     htmlCode +
@@ -234,4 +238,32 @@ function setDetail(id) {
   let event = getData().events.find(event => event._id == id);
   localStorage.setItem("detail", JSON.stringify(event));
   location.href = "/templates/detail.html";
+}
+
+function filter() {
+  var inputSearch = document.getElementById('inputSearch').value;
+  var inputChecks = document.getElementsByClassName('amazeCheck');
+  let selectedChecks = [];
+  for (let item of inputChecks) {
+    if(item.checked){
+      selectedChecks.push(item.value);
+    };
+  };
+  if(selectedChecks.length != 0 && inputSearch){
+    return ;
+  }
+  if(inputSearch && selectedChecks.length == 0){
+    let filteredEvents = getData().events.filter((element) => element.name === inputSearch );
+    console.log(filteredEvents);
+    getCards(filteredEvents);
+    return;
+  }
+  if(!inputSearch && selectedChecks.length != 0){
+    console.log("hola categories");
+    let filteredEvents = getData().events.filter((element) =>selectedChecks.includes(element.category));
+    getCards(filteredEvents);
+    return;
+  }
+    let filteredEvents = getData().events.filter((element) => element.name === inputSearch && selectedChecks.includes(element.category));
+    getCards(filteredEvents);
 }
