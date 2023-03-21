@@ -3,9 +3,12 @@ async function  getData(){
   const response =  await fetch(url);
   return await response.json();
 };
-function getCategories() {
+async function getCategories() {
   let htmlCheckboxes = '';
   let id = 0;
+  let data = await getData();
+  let categoriesRepeated = data.events.map((element) => element.category);
+  let categories = [...new Set(categoriesRepeated)];
   categories.forEach(function(element){
     htmlCheckboxes += `
     <div class="form-check mx-2">
@@ -61,7 +64,6 @@ function getCards(data) {
 const cards = document.getElementById('cards');
 cards.innerHTML = htmlCode;
 };
-const categories = ["Food Fair", "Museum", "Costume Party","Music Concert","Race","Book Exchange","Cinema"];
 
 
 async function setDetail(id) {
@@ -91,6 +93,7 @@ async function filter() {
     return;
   }
   if(!inputSearch && selectedChecks.length != 0){
+    console.log("entro a checks",data.events);
     let filteredEvents = data.events.filter((element) => selectedChecks.includes(element.category));
     getCards(filteredEvents);
     return ;
