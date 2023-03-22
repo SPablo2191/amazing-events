@@ -36,17 +36,96 @@ async function getCapacity(){
     let eventHighCell = document.getElementById('capacity');
     eventHighCell.innerHTML = `<p>${eventCapacity} (${highCapacity})</p>`;
 };
-async function getUpcomingEvents(){
+async function getUpcomingEventsStats(){
     let futureEvents = await getFutureEvents();
     let categories = await getCategoryData();
     let tbody = document.getElementById('futureEvent');
     let htmlCode = ``;
-    categories.forEach(category=>{
+    let tableRows = [];
+    categories.forEach(category => {
+        let revenue = 0;
+        let totalEstimate = 0;
+        let totalCapacity = 0;
+        futureEvents.forEach(event =>{
+            if(event.category === category){
+                console.log(event.name,"entro",revenue,event.price,event.estimate);
+                revenue += parseInt(event.price)*parseInt(event.estimate);
+                totalEstimate += event.estimate;
+                totalCapacity += event.capacity;
+                console.log(revenue);
+            }
+        });
+        console.log(revenue);
+        tableRows.push({
+            category : category,
+            revenue : revenue,
+            percentageAttendance : Math.round(totalEstimate/totalCapacity*100)
+        });
+    });
+    tableRows.forEach(tableRow=>{
+        if(isNaN(tableRow.percentageAttendance)){
+            htmlCode += `
+            <tr>
+            <td>${tableRow.category}</td>
+            <td>$${tableRow.revenue}</td>
+            <td>0%</td>
+          </tr>
+            `;
+            return;
+        }
         htmlCode += `
         <tr>
-        <td>${category}</td>
-        <td>Revenues</td>
-        <td>Percentage of attendance</td>
+        <td>${tableRow.category}</td>
+        <td>$${tableRow.revenue}</td>
+        <td>${tableRow.percentageAttendance}%</td>
+      </tr>
+        `;
+    });
+    console.log(htmlCode);
+    tbody.innerHTML = htmlCode;
+}
+async function getPastEventsStats(){
+    let futureEvents = await getPastEvents();
+    let categories = await getCategoryData();
+    let tbody = document.getElementById('pastEvent');
+    let htmlCode = ``;
+    let tableRows = [];
+    categories.forEach(category => {
+        let revenue = 0;
+        let totalAssistance = 0;
+        let totalCapacity = 0;
+        futureEvents.forEach(event =>{
+            if(event.category === category){
+                console.log(event.name,"entro",revenue,event.price,event.assistance);
+                revenue += parseInt(event.price)*parseInt(event.assistance);
+                totalAssistance += event.assistance;
+                totalCapacity += event.capacity;
+                console.log(revenue);
+            }
+        });
+        console.log(revenue);
+        tableRows.push({
+            category : category,
+            revenue : revenue,
+            percentageAttendance : Math.round(totalAssistance/totalCapacity*100)
+        });
+    });
+    tableRows.forEach(tableRow=>{
+        if(isNaN(tableRow.percentageAttendance)){
+            htmlCode += `
+            <tr>
+            <td>${tableRow.category}</td>
+            <td>$${tableRow.revenue}</td>
+            <td>0%</td>
+          </tr>
+            `;
+            return;
+        }
+        htmlCode += `
+        <tr>
+        <td>${tableRow.category}</td>
+        <td>$${tableRow.revenue}</td>
+        <td>${tableRow.percentageAttendance}%</td>
       </tr>
         `;
     });
@@ -55,4 +134,5 @@ async function getUpcomingEvents(){
 }
 getAttendance();
 getCapacity();
-getUpcomingEvents();
+getUpcomingEventsStats();
+getPastEventsStats();
