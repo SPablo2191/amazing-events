@@ -74,7 +74,7 @@ async function setDetail(id) {
   let data = await getData();
   let event = data.events.find(event => event._id == id);
   localStorage.setItem("detail", JSON.stringify(event));
-  location.href = "/templates/detail.html";
+  location.href = "../templates/detail.html";
 }
 
 async function filter() {
