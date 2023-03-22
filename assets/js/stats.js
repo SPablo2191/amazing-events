@@ -48,14 +48,11 @@ async function getUpcomingEventsStats(){
         let totalCapacity = 0;
         futureEvents.forEach(event =>{
             if(event.category === category){
-                console.log(event.name,"entro",revenue,event.price,event.estimate);
                 revenue += parseInt(event.price)*parseInt(event.estimate);
                 totalEstimate += event.estimate;
                 totalCapacity += event.capacity;
-                console.log(revenue);
             }
         });
-        console.log(revenue);
         tableRows.push({
             category : category,
             revenue : revenue,
@@ -81,7 +78,6 @@ async function getUpcomingEventsStats(){
       </tr>
         `;
     });
-    console.log(htmlCode);
     tbody.innerHTML = htmlCode;
 }
 async function getPastEventsStats(){
@@ -96,14 +92,11 @@ async function getPastEventsStats(){
         let totalCapacity = 0;
         futureEvents.forEach(event =>{
             if(event.category === category){
-                console.log(event.name,"entro",revenue,event.price,event.assistance);
                 revenue += parseInt(event.price)*parseInt(event.assistance);
                 totalAssistance += event.assistance;
                 totalCapacity += event.capacity;
-                console.log(revenue);
             }
         });
-        console.log(revenue);
         tableRows.push({
             category : category,
             revenue : revenue,
@@ -129,7 +122,6 @@ async function getPastEventsStats(){
       </tr>
         `;
     });
-    console.log(htmlCode);
     tbody.innerHTML = htmlCode;
 }
 getAttendance();

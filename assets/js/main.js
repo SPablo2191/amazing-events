@@ -74,7 +74,7 @@ async function setDetail(id) {
   let data = await getData();
   let event = data.events.find(event => event._id == id);
   localStorage.setItem("detail", JSON.stringify(event));
-  location.href = "../templates/detail.html";
+  location.href = "templates/detail.html";
 }
 
 async function filter() {
@@ -92,12 +92,10 @@ async function filter() {
   }
   if(inputSearch && selectedChecks.length == 0){
     let filteredEvents = data.events.filter((element) => element.name === inputSearch );
-    console.log(filteredEvents);
     getCards(filteredEvents);
     return;
   }
   if(!inputSearch && selectedChecks.length != 0){
-    console.log("entro a checks",data.events);
     let filteredEvents = data.events.filter((element) => selectedChecks.includes(element.category));
     getCards(filteredEvents);
     return ;
