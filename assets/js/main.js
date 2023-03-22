@@ -3,12 +3,16 @@ async function  getData(){
   const response =  await fetch(url);
   return await response.json();
 };
-async function getCategories() {
-  let htmlCheckboxes = '';
-  let id = 0;
+async function getCategoryData(){
   let data = await getData();
   let categoriesRepeated = data.events.map((element) => element.category);
   let categories = [...new Set(categoriesRepeated)];
+  return categories;
+}
+async function getCategories() {
+  let htmlCheckboxes = '';
+  let id = 0;
+  let categories = await getCategoryData();
   categories.forEach(function(element){
     htmlCheckboxes += `
     <div class="form-check mx-2">
@@ -101,3 +105,18 @@ async function filter() {
     let filteredEvents = data.events.filter((element) => element.name === inputSearch && selectedChecks.includes(element.category));
     getCards(filteredEvents);
 }
+
+async function getFutureEvents() {
+  let data = await getData();
+  const futureEvents = data.events.filter(
+    event => Date.parse(event.date) > Date.parse(data.currentDate)
+  );
+  return futureEvents;
+};
+async function getPastEvents() {
+  let data = await getData();
+  const pastEvents = data.events.filter(
+    event => Date.parse(event.date) < Date.parse(data.currentDate)
+  );
+  return pastEvents;
+};
