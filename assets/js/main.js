@@ -22,6 +22,7 @@ async function getCategories() {
       value="${element}"
       name="check${id}"
       id="amazeChecks"
+      onclick="filter()"
     />
     <label class="form-check-label text-center" for="flexCheckDefault">
       ${element}
@@ -87,7 +88,9 @@ async function filter() {
     };
   };
   let data = await getData();
-  if(selectedChecks.length != 0 && inputSearch){
+  console.log(selectedChecks,inputSearch);
+  if(selectedChecks.length == 0 && !inputSearch){
+    getCards(data.events);
     return ;
   }
   if(inputSearch && selectedChecks.length == 0){
